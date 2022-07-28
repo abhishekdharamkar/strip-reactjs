@@ -1,0 +1,30 @@
+.countervalue{
+   
+    height: 27px;
+    width: 33px;
+    border: none;
+    background-color: #f5f7ff;
+}
+.conterbox{
+    display: flex;
+    width: fit-content;
+    padding: 14px;
+    background-color: #f5f7ff;
+}
+.conterbox1{
+    
+    float: left;
+}
+.conterbox2{
+    
+  margin-left: 18px;
+  
+    position: absolute;
+    
+}
+.arrow{
+    display: flex;
+    flex-direction:column;
+    padding: 0%;
+}
+
