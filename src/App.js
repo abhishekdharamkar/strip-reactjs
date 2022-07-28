@@ -70,7 +70,7 @@ console.log(show,"show")
   //
 
   
-  //
+  // sweet Alert
   const MySwal = withReactContent(Swal);
   const handleSuccess =()=>{
     console.log("success")
@@ -124,7 +124,7 @@ useEffect(()=>{
       <NavBar />
    
       <div className="navbar3">
-         <p className="fw-bold  about-product">
+         <p className="fw-bold about-product">
               About Product
             </p>
         <div className="right">
@@ -145,57 +145,6 @@ useEffect(()=>{
         </div>
       </div>
     <FetchProduct productData={setProductData}/> 
-  
-    {/* <Modal
-      show={show}
-      onHide={handleClose}
-      backdrop="static"
-      keyboard={false}
-      centered
-      className="text-center"
-    >
-      <Modal.Header closeButton>
-        <Modal.Title
-          className="d-inline-block h5 fw-bold"
-          style={{ marginLeft: "2rem" }}
-        >
-          <Image
-             src="https://www.pngall.com/wp-content/uploads/2016/07/Success-PNG-Image.png"
-            alt="Successful/Failure Image"
-            width="130"
-            className="success-img"
-            style={{ margin: "0 auto" }}
-          ></Image>
-          
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body className="">
-        
-      </Modal.Body>
-    </Modal> */}
-    {/* <Modal 
-  show={show}
-  onHide={handleClose}
-  backdrop="static"
-  keyboard={false}
-  centered
- 
->
-  <Modal.Header  className="successPopUp">
-    <button onClick={handleClose} className="closebtn" >X</button>
-      <Image
-        src="https://www.pngall.com/wp-content/uploads/2016/07/Success-PNG-Image.png"
-        alt="Success Img"
-        width="130"
-        className="successImg"
-        
-      ></Image>
-  </Modal.Header>
- 
- <div className="purchase-success"><p className="purchase-success1">Purchase Successful</p></div>
-  
- 
-</Modal> */}
     </div>
   );
 }

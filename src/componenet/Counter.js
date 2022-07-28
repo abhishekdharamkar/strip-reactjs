@@ -22,8 +22,10 @@ export default function Counter(props) {
   return (
     <div className="conterbox">
       <div className="conterbox1">
+      
         <input
           type="text"
+          disabled 
           className="countervalue"
           value={num}
           onChange={handleChange}
