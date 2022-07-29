@@ -94,7 +94,7 @@ console.log(show,"show")
   }
 
 const location_url = window.location.href;
-
+console.log(location_url,"rrr")
 const checkQueryParams = () => {
   
   

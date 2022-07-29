@@ -37,7 +37,7 @@
     }
   }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 475px) {
   .text-margin-style {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
@@ -49,5 +49,6 @@
     right: 1px;
     left: 0;
     z-index: 1030;
+    
   }
 }

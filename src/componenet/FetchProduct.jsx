@@ -5,7 +5,7 @@ import "./FetchProduct.css";
 import Carousel from "react-bootstrap/Carousel";
 import Counter from "./Counter";
 import PaymentService from "../Service/PaymentService";
-
+import { Autoplay, Pagination } from "swiper";
 import { loadStripe } from "@stripe/stripe-js";
 
 import { Elements } from "@stripe/react-stripe-js";
@@ -17,7 +17,6 @@ import Modal from "react-bootstrap/Modal";
 const stripePromise = loadStripe(
   "pk_test_51LNuP7SDR0ZL4tTdWq1aCG9QB9qZKYnWbRTInV0IAOTfW9QlyWziY1a5ksOUgLcziWQICBa6fRmf7UTp6PVZWg7000oZqGnVqQ"
 );
-
 
 function FetchProduct(props) {
   const [value, setValue] = useState(1);
@@ -31,19 +30,17 @@ function FetchProduct(props) {
       props.productData(response.data);
     });
   }, []);
-  
+
   // console.log(post,"qqqqqqqqqqqqqqqqqqqqqq")
   if (!post) return null;
 
-  window.onload=()=>{
-  const two = document.getElementsByClassName('product-info')[0];
-    two.innerHTML = post.productDesc
-}
-  
+  window.onload = () => {
+    const two = document.getElementsByClassName("product-info")[0];
+    two.innerHTML = post.productDesc;
+  };
 
   return (
     <div>
-     
       {/* <div className="row">
         <div className="col-md-6">About Product</div>
 
@@ -60,7 +57,6 @@ function FetchProduct(props) {
         </div>
       </div> */}
 
-      
       <div className="details row" key={post.id}>
         <div className="box col-md-6 ">
           {/*col-md-6 / 8 */}
@@ -71,22 +67,18 @@ function FetchProduct(props) {
             >
               APPLE PRODUCTS
             </span>
-            <h4 className="mb-3 product-title">
-             {post.productname}
-            </h4>
+            <h4 className="mb-3 product-title">{post.productname}</h4>
             <p style={{ fontSize: "13px" }}>It's magic, remastered!</p>
-            
-            <ul className="list-space product-info">
-               
-            </ul>
-           
-            
 
+            <ul className="list-space product-info"></ul>
           </div>
         </div>
         <div className="big-img col-md-6">
-          <Carousel>
-            <Carousel.Item controls={false} interval={1000}>
+        
+       
+        
+          <Carousel indicators={false} controls={false}>
+            <Carousel.Item  interval={1000}>
               <img className="d-block w-100" src={post.imageUrl[0].url1} alt="First slide" />
             </Carousel.Item>
             <Carousel.Item interval={500}>
@@ -111,6 +103,7 @@ function FetchProduct(props) {
               />
             </Carousel.Item>
           </Carousel>
+      
         </div>
       </div>
       <div></div>
