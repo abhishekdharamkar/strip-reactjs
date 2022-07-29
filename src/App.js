@@ -66,10 +66,6 @@ console.log(show,"show")
     
     
   };
-
-  //
-
-  
   // sweet Alert
   const MySwal = withReactContent(Swal);
   const handleSuccess =()=>{

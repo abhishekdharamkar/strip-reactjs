@@ -65,9 +65,6 @@ function FetchProduct(props) {
         <div className="box col-md-6 ">
           {/*col-md-6 / 8 */}
           <div className="row productinfo">
-            {/* <h2>{post.product_name}</h2>
-            <span>{post.product_price} ₹</span>
-            <p>{post.product_info}</p> */}
             <span
               className="d-xl-block d-lg-block d-md-none d-sm-none d-none"
               style={{ opacity: "0.5", fontSize: "11px" }}
@@ -116,72 +113,8 @@ function FetchProduct(props) {
           </Carousel>
         </div>
       </div>
-     
-
-      {/* <MyVerticallyCenteredModal
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-      /> */}
       <div></div>
     </div>
   );
 }
 export default FetchProduct;
-
-// function MyVerticallyCenteredModal(props) {
-  // const [clientSecret, setClientSecret] = useState("");
-  // console.log(props.show)
-  // // switch (props.show) {
-   
-  //   // case 1: console.log(props.show)
-  //       console.log("modal");
-  //   fetch("http://localhost:8080/create-payment-intent", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({ items: [{ id: "xl-tshirt" }] }),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => setClientSecret(data.clientSecret));
-  //     // break;
-  // // }
-  // const appearance = {
-  //   theme: "stripe",
-  // };
-  // const options = {
-  //   clientSecret,
-  //   appearance,
-  // };
-  // return (
-  //   <Modal
-  //     // onload={handleclick()}
-  //     {...props}
-  //     size="lg"
-  //     aria-labelledby="contained-modal-title-vcenter"
-  //     centered
-  //   >
-  //     <Modal.Header closeButton>
-  //       <Modal.Title id="contained-modal-title-vcenter">
-  //         Modal heading
-  //       </Modal.Title>
-  //     </Modal.Header>
-  //     <Modal.Body>
-  //       {clientSecret && (
-  //         <Elements options={options} stripe={stripePromise}>
-  //           <CheckoutForm />
-  //         </Elements>
-  //       )}
-  //     </Modal.Body>
-  //     <Modal.Footer>
-  //       <Button onClick={props.onHide}>Close</Button>
-  //     </Modal.Footer>
-  //   </Modal>
-  // );
-// }
-
-
-
-
-
-
-
-
