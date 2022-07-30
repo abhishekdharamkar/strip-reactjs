@@ -20,19 +20,19 @@ const NavBar = () => {
       className="main-navbar-text-size mt-xl-2 mt-lg-2 pt-md-2"
     >
       <Container className="main-text-margin-style">
-        <Navbar.Brand href="#" className="pt-md-0">
-          {/* <img
-            src={icon}
-            height="32"
+        <Navbar.Brand href="#" className="pt-md-0 ">
+          <img
+            src="https://raw.githubusercontent.com/amareshjs/amaresh-assign-frontend/master/src/assets/logo.png"
             alt="Website Icon"
-            className="icon-style my-1"
-          /> */}
+            className="navbar-brand-logo"
+          />
           {/* <GiBoxUnpacking className="icon-style" style={style} /> */}
-          
+          {/* <img className="navbar-brand" src="https://raw.githubusercontent.com/amareshjs/amaresh-assign-frontend/master/src/assets/logo.png" alt="" /> */}
+
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-
+        
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto fw-bold">
             <Nav.Link

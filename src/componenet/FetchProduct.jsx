@@ -3,16 +3,10 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./FetchProduct.css";
 import Carousel from "react-bootstrap/Carousel";
-import Counter from "./Counter";
+
 import PaymentService from "../Service/PaymentService";
-import { Autoplay, Pagination } from "swiper";
+
 import { loadStripe } from "@stripe/stripe-js";
-
-import { Elements } from "@stripe/react-stripe-js";
-import CheckoutForm from "./CheckoutForm";
-
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
 
 const stripePromise = loadStripe(
   "pk_test_51LNuP7SDR0ZL4tTdWq1aCG9QB9qZKYnWbRTInV0IAOTfW9QlyWziY1a5ksOUgLcziWQICBa6fRmf7UTp6PVZWg7000oZqGnVqQ"
@@ -41,22 +35,6 @@ function FetchProduct(props) {
 
   return (
     <div>
-      {/* <div className="row">
-        <div className="col-md-6">About Product</div>
-
-        <div className="col-md-6 right">
-          <div className="right1">
-            {" "}
-            <Counter counter={setValue} />
-          </div>
-          <div className="right2">
-            <button className="buynow" onClick={handle}>
-              Buy Now
-            </button>
-          </div>
-        </div>
-      </div> */}
-
       <div className="details row" key={post.id}>
         <div className="box col-md-6 ">
           {/*col-md-6 / 8 */}
@@ -74,12 +52,38 @@ function FetchProduct(props) {
           </div>
         </div>
         <div className="big-img col-md-6">
-        
-       
-        
-          <Carousel indicators={false} controls={false}>
-            <Carousel.Item  interval={1000}>
-              <img className="d-block w-100" src={post.imageUrl[0].url1} alt="First slide" />
+        {/* <div className="col right-side">
+            <div id="carouselExampleInterval" className="carousel carousel-dark slide" data-bs-ride="carousel">
+              <div className="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              </div>
+              <div className="carousel-inner">
+                <div className="carousel-item active" data-bs-interval="300">
+                  <img src={post.imageUrl[0].url1} class="d-block" alt="..."/>
+                </div>
+                <div className="carousel-item" data-bs-interval="500">
+                  <img src={post.imageUrl[0].url2} class="d-block" alt="..."/>
+                </div>
+                <div clclassNameass="carousel-item" data-bs-interval="500">
+                  <img src={post.imageUrl[0].url3} class="d-block" alt="..."/>
+                </div>
+                <div className="carousel-item" data-bs-interval="500">
+                  <img src={post.imageUrl[0].url4} class="d-block" alt="..."/>
+                </div>
+              </div>
+             
+            </div>
+              </div> */}
+          <Carousel indicators={true} controls={false}>
+            <Carousel.Item interval={1000}>
+              <img
+                className="d-block w-100"
+                src={post.imageUrl[0].url1}
+                alt="First slide"
+              />
             </Carousel.Item>
             <Carousel.Item interval={500}>
               <img
@@ -103,7 +107,6 @@ function FetchProduct(props) {
               />
             </Carousel.Item>
           </Carousel>
-      
         </div>
       </div>
       <div></div>
