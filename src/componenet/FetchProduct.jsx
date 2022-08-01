@@ -1,4 +1,3 @@
-import axios from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
 import "./FetchProduct.css";
@@ -25,7 +24,6 @@ function FetchProduct(props) {
     });
   }, []);
 
-  // console.log(post,"qqqqqqqqqqqqqqqqqqqqqq")
   if (!post) return null;
 
   window.onload = () => {
@@ -52,31 +50,6 @@ function FetchProduct(props) {
           </div>
         </div>
         <div className="big-img col-md-6">
-        {/* <div className="col right-side">
-            <div id="carouselExampleInterval" className="carousel carousel-dark slide" data-bs-ride="carousel">
-              <div className="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="0" class="active" aria-current="true"></button>
-                <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="3" aria-label="Slide 4"></button>
-              </div>
-              <div className="carousel-inner">
-                <div className="carousel-item active" data-bs-interval="300">
-                  <img src={post.imageUrl[0].url1} class="d-block" alt="..."/>
-                </div>
-                <div className="carousel-item" data-bs-interval="500">
-                  <img src={post.imageUrl[0].url2} class="d-block" alt="..."/>
-                </div>
-                <div clclassNameass="carousel-item" data-bs-interval="500">
-                  <img src={post.imageUrl[0].url3} class="d-block" alt="..."/>
-                </div>
-                <div className="carousel-item" data-bs-interval="500">
-                  <img src={post.imageUrl[0].url4} class="d-block" alt="..."/>
-                </div>
-              </div>
-             
-            </div>
-              </div> */}
           <Carousel indicators={true} controls={false}>
             <Carousel.Item interval={1000}>
               <img

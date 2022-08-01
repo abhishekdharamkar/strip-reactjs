@@ -1,14 +1,6 @@
-// import Container from 'react-bootstrap/Container';
-// import NavLink from 'react-bootstrap/esm/NavLink';
-// import Nav from 'react-bootstrap/Nav';
-// import Navbar from 'react-bootstrap/Navbar';
-
-
-
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-// import { GiBoxUnpacking } from "react-icons/gi";
 import "./Navbar.css";
 
 const NavBar = () => {
@@ -26,9 +18,7 @@ const NavBar = () => {
             alt="Website Icon"
             className="navbar-brand-logo"
           />
-          {/* <GiBoxUnpacking className="icon-style" style={style} /> */}
-          {/* <img className="navbar-brand" src="https://raw.githubusercontent.com/amareshjs/amaresh-assign-frontend/master/src/assets/logo.png" alt="" /> */}
-
+      
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

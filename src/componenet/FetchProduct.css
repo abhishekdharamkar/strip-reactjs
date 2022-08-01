@@ -72,6 +72,7 @@
   height: 10px !important;
   width: 10px !important;
   border-radius: 100% !important;
+  
 }
 
 .carousel-indicators  {
@@ -80,6 +81,8 @@
 margin-top: 3rem !important;
 border-radius: 100%;
 top: 19.1rem;
+color: #CACDD8 !important;
+
 }
 
 .carousel-indicators [data-bs-target] {

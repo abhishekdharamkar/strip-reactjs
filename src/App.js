@@ -1,19 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
-import "./App.css"
-import CreatePaymentIntent from "./componenet/CreatePaymentIntent";
+import "./App.css";
 import FetchProduct from "./componenet/FetchProduct";
 import NavBar from "./componenet/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
-import PaymentService from "./Service/PaymentService";
 import Counter from "./componenet/Counter";
 import ContactNavbar from "./componenet/ContactNavbar";
-import Modal from "react-bootstrap/Modal";
-import Image from "react-bootstrap/Image";
-import { Button } from "bootstrap";
 import Swal from "sweetalert2";
-import success from './componenet/asset/success.png';
 import withReactContent from "sweetalert2-react-content";
 const stripePromise = loadStripe(
   "pk_test_51LNuP7SDR0ZL4tTdWq1aCG9QB9qZKYnWbRTInV0IAOTfW9QlyWziY1a5ksOUgLcziWQICBa6fRmf7UTp6PVZWg7000oZqGnVqQ"
@@ -21,110 +15,86 @@ const stripePromise = loadStripe(
 
 function App() {
   const [quantity, setValue] = useState(1);
- const [ProductData,setProductData]=useState([]);
- const [show, setShow] = useState(false); // stateful variable for displaying popup
-  const handleClose = () => setShow(false);
+  const [ProductData, setProductData] = useState([]);
+  const [show, setShow] = useState(false);
+
   const handleShow = () => setShow(true);
-console.log(show,"show")
+  console.log(show, "show");
   const handleClick = async () => {
-    console.log("handle click");
-    // PaymentService.send(value);
     const stripe = await stripePromise;
-  
-    const productCart={
-      "quantity":quantity,
-      "productName":ProductData.productname
-  }
-  console.log(JSON.stringify(productCart),"popoopo")
- 
     try {
       const response = await axios({
         url: "http://localhost:8080/checkout",
         headers: {
-          'Content-Type': 'application/json'
-      },
+          "Content-Type": "application/json",
+        },
         method: "post",
-        data: quantity
+        data: quantity,
       });
-      console.log(response)
-      // Let url = new URL({response.})
       const session = response.data;
       console.log("responseeee", session);
       const result = await stripe.redirectToCheckout({
         sessionId: session.id,
-      }
-      );
-      
-      
+      });
       if (result.error) {
-
         console.log("redirectToCheckout Fails", result.error);
       }
     } catch (error) {
       console.log(error);
     }
-    
-    
   };
   // sweet Alert
   const MySwal = withReactContent(Swal);
-  const handleSuccess =()=>{
-    console.log("success")
-    handleShow()
+  const handleSuccess = () => {
+    console.log("success");
+    handleShow();
     MySwal.fire({
       // icon:"success",
       showConfirmButton: false,
-      imageUrl: 'https://www.pngall.com/wp-content/uploads/2016/07/Success-PNG-Image.png',
+      imageUrl:
+        "https://www.pngall.com/wp-content/uploads/2016/07/Success-PNG-Image.png",
       imageHeight: 100,
-      title:'Purchase Successful',
+      title: "Purchase Successful",
       showCloseButton: true,
       html:
-    '<p style="font-family: Poppins">You will get your product soon!</p><br>' +
-    '<p style="font-family: Poppins">Get ready to experience the spatial audio with <br>adaptive EQ that tunes music to your ears.</p>',
-      timer:8000,
-    })
-  }
-  const handlefailure =()=>{
-    console.log("fail")
+        '<p style="font-family: Poppins">You will get your product soon!</p><br>' +
+        '<p style="font-family: Poppins">Get ready to experience the spatial audio with <br>adaptive EQ that tunes music to your ears.</p>',
+      timer: 218000,
+    });
+  };
+  const handlefailure = () => {
+    console.log("fail");
     MySwal.fire({
-      icon:"error",
-      title:'Payment failed',
-      timer:4000,
-    })
-  }
+      icon: "error",
+      title: "Payment failed",
+      timer: 4000,
+    });
+  };
 
-const location_url = window.location.href;
-console.log(location_url,"rrr")
-const checkQueryParams = () => {
-  
-  
-  const url_array = location_url.split("/");
-  console.log(url_array[3],"url");
+  const location_url = window.location.href;
+  const checkQueryParams = () => {
+    const urls = location_url.split("/");
+    console.log(urls[3], "url");
 
-  if(url_array[3] === "success"){
+    if (urls[3] === "success") {
+      handleSuccess();
+    }
 
-    handleSuccess();
-  }
-
-  if(url_array[3] === "cancle"){
-    handlefailure();
-  }
-}
-useEffect(()=>{
-  checkQueryParams();
-},[location_url])
+    if (urls[3] === "cancle") {
+      handlefailure();
+    }
+  };
+  useEffect(() => {
+    checkQueryParams();
+  }, [location_url]);
   return (
     <div className="App">
       <ContactNavbar />
-
       <NavBar />
-   
       <div className="navbar3">
-         <p className="fw-bold about-product">
-              About Product
-            </p>
+        <p className="fw-bold about-product">About Product</p>
         <div className="right">
-        <p
+          <p
             className="d-sm-inline-block d-inline-block"
             style={{ marginTop: "1rem" }}
           >
@@ -134,13 +104,13 @@ useEffect(()=>{
             <Counter counter={setValue} />
           </div>
           <div className="right2">
-            <button className="buynow" onClick={handleClick}>
+            <button className="buy-now-button" onClick={handleClick}>
               Buy Now
             </button>
           </div>
         </div>
       </div>
-    <FetchProduct productData={setProductData}/> 
+      <FetchProduct productData={setProductData} />
     </div>
   );
 }

@@ -20,7 +20,7 @@ i{
   border-bottom: 2px solid #0156FF;
   color: #666666;
 }
-.buynow{
+.buy-now-button{
   color: aliceblue;
   background-color: #2576fb;
   border: #2576fb;
@@ -36,16 +36,9 @@ i{
 .example::-webkit-scrollbar {
   display: none;
 }
-/* .successPopUp{
-  position: relative;
-  width: 755px;
-  height: 442px;
-  
-  background: #FFFFFF;
-  border-radius: 8px;
-} */
+
 .success-img{
-  position: absolute;
+position: absolute;
 width: 100px;
 height: 100px;
 left: 328px;
@@ -65,22 +58,15 @@ top: 64px;
   font-size: 14px;
 }
 .purchase-success{
-
-  /* identical to box height, or 125% */
-  
   display: flex;
   align-items: center;
   text-align: center;
-  
-  /* Color - 7 */
   position: absolute;
   width: 567px;
   height: 30px;
   left: 214px;
   top: 196px;
-  
   color: #000000;
-  
 }
 .purchase-success1{
   
@@ -89,6 +75,14 @@ top: 64px;
   font-weight: 700;
   font-size: 24px;
   line-height: 30px;
+}
+.swal2-close:focus{
+  outline: none !important;
+  box-shadow: none !important;
+}
+.swal2-close{
+ 
+ color: #000000 !important;
 }
 @media only screen and (max-width: 434px) {
 
@@ -123,6 +117,7 @@ top: 64px;
   }
 
 }
+
 @media only screen and (max-width: 770px) {
 
 .navbar3 .about-product {   
@@ -140,17 +135,14 @@ margin-left: 1.3rem;
     -ms-flex-order: 1;
     -webkit-order: 1;
     order: 1;
-    
     width:100%;
-   
     justify-content: center;
     position: fixed;
     bottom: 0;
     overflow: hidden;
     background-color: white;
     padding: 1.5px;
-    
-height: 90px;
+    height: 90px;
 
   }
 
