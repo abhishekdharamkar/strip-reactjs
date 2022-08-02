@@ -7,7 +7,9 @@
     padding-left: 6.5rem !important;
     padding-right: 7.4rem !important;
 }
-
+/* .navbar-style{
+  position: fixed !important;
+} */
 @media only screen and (max-width: 790px) and (min-width: 500px) {
     .text-margin-style {
       padding-left: 0 !important;
