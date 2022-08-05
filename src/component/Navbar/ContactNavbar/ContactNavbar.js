@@ -1,6 +1,6 @@
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
-import "./ContachNavbar.css";
+import "./ContactNavbar.css";
 import React from "react";
 
 const ContactNavbar = () => {

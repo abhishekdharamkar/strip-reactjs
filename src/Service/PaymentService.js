@@ -3,5 +3,8 @@ import httpClient from "../http-common";
 const getAll = () => {
     return httpClient.get('/productList');
 }
-
-export default { getAll };
+const checkout =quentity=>{
+    console.log("in service",quentity   )
+    return httpClient.post("/checkout",quentity)
+}
+export default { getAll,checkout };

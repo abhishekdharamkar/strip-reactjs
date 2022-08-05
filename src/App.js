@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
 import "./App.css";
-import FetchProduct from "./componenet/FetchProduct";
-import NavBar from "./componenet/Navbar";
+import FetchProduct from "./component/Product/FetchProduct";
+import NavBar from "./component/Navbar/MainNavbar/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Counter from "./componenet/Counter";
-import ContactNavbar from "./componenet/ContactNavbar";
+import Counter from "./component/Counter/Counter";
+import ContactNavbar from "./component/Navbar/ContactNavbar/ContactNavbar";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 const stripePromise = loadStripe(
@@ -17,9 +17,7 @@ function App() {
   const [quantity, setValue] = useState(1);
   const [ProductData, setProductData] = useState([]);
   const [show, setShow] = useState(false);
-
   const handleShow = () => setShow(true);
-  console.log(show, "show");
   const handleClick = async () => {
     const stripe = await stripePromise;
     try {
@@ -31,6 +29,7 @@ function App() {
         method: "post",
         data: quantity,
       });
+     
       const session = response.data;
       console.log("responseeee", session);
       const result = await stripe.redirectToCheckout({
@@ -59,7 +58,7 @@ function App() {
       html:
         '<p style="font-family: Poppins">You will get your product soon!</p><br>' +
         '<p style="font-family: Poppins">Get ready to experience the spatial audio with <br>adaptive EQ that tunes music to your ears.</p>',
-      timer: 218000,
+      timer: 21000,
     });
   };
   const handlefailure = () => {
@@ -89,6 +88,7 @@ function App() {
   }, [location_url]);
   return (
     <div className="App">
+    
       <ContactNavbar />
       <NavBar />
       <div className="navbar3">

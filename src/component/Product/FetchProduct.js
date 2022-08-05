@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import "./FetchProduct.css";
 import Carousel from "react-bootstrap/Carousel";
 
-import PaymentService from "../Service/PaymentService";
+import PaymentService from "../../Service/PaymentService";
 
 import { loadStripe } from "@stripe/stripe-js";
 
@@ -13,11 +13,9 @@ const stripePromise = loadStripe(
 
 function FetchProduct(props) {
   const [value, setValue] = useState(1);
-  const [post, setPost] = React.useState(null);
+  const [post, setPost] = useState(null);
 
-  const [modalShow, setModalShow] = React.useState(false);
-
-  React.useEffect(() => {
+  useEffect(() => {
     PaymentService.getAll().then((response) => {
       setPost(response.data);
       props.productData(response.data);
