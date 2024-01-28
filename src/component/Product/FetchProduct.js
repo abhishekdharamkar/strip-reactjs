@@ -42,9 +42,9 @@ function FetchProduct(props) {
               APPLE PRODUCTS
             </span>
             <h4 className="mb-3 product-title">{post.productname}</h4>
-            <p style={{ fontSize: "13px" }}>It's magic, remastered!</p>
+            <p >It's magic, remastered!</p>
             <ul className="list-space product-info"></ul>
-            <p>SKU D5515AI</p>
+            <p style={{ marginTop:"-4px"}}>SKU D5515AI</p>
           </div>
         </div>
         <div className="big-img col-md-6">

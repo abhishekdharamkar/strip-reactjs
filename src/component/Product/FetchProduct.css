@@ -59,7 +59,7 @@
 .list-space {
     padding-left: 1em;
     font-weight: 300;
-    font-size: 12px;
+    font-size: 14px;
 }
 .carousel-indicators button {
   height: 10px !important;
@@ -116,7 +116,9 @@ color: #CACDD8 !important;
     
     order: 1;
   }
-
+  .p2{
+    margin-top:0px;
+  }
 }
 
 @media only screen and (max-width: 770px) {
@@ -167,6 +169,7 @@ color: #CACDD8 !important;
     padding-left: 1.2em; 
     padding-top: 6px;
    border: none;
+   margin: 0;
     
   }
   .box p{

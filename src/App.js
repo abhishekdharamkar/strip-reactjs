@@ -22,7 +22,7 @@ function App() {
     const stripe = await stripePromise;
     try {
       const response = await axios({
-        url: "http://localhost:8080/checkout",
+        url: "http://localhost:8080/api/checkout",
         headers: {
           "Content-Type": "application/json",
         },
